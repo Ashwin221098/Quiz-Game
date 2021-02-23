@@ -10,9 +10,10 @@ let choices = [
   containerFour,
   containerFive,
 ];
+let uname;
 
 function validate() {
-  let uname = document.getElementById("username").value;
+  uname = document.getElementById("username").value;
   let message = document.getElementById("usermsg");
   let form = document.getElementById("form");
 
@@ -25,6 +26,7 @@ function validate() {
     form.style.display = "none";
     containerOne.style.display = "block";
   }
+  return uname;
 }
 
 let choiceOneR = document.querySelector(".choice-1-r");
@@ -35,37 +37,37 @@ let choiceFiveR = document.querySelector(".choice-5-r");
 let wrongChoice = document.querySelectorAll(".choice-w");
 
 choiceOneR.addEventListener("click", () => {
-  alert("Your answer is correct, your next Question");
+  alert(`${uname} Your answer is correct, your next Question`);
   containerOne.style.display = "none";
   containerTwo.style.display = "block";
 });
 choiceTwoR.addEventListener("click", () => {
-  alert("Your answer is correct, your next Question");
+  alert(`${uname} Your answer is correct, your next Question`);
   containerTwo.style.display = "none";
   containerThree.style.display = "block";
 });
 
 choiceThreeR.addEventListener("click", () => {
-  alert("Your answer is correct, your next Question");
+  alert(`${uname} Your answer is correct, your next Question`);
   containerThree.style.display = "none";
   containerFour.style.display = "block";
 });
 
 choiceFourR.addEventListener("click", () => {
-  alert("Your answer is correct, your next Question");
+  alert(`${uname} Your answer is correct, your next Question`);
   containerFour.style.display = "none";
   containerFive.style.display = "block";
 });
 
 choiceFiveR.addEventListener("click", () => {
-  alert("You won the game");
+  alert(`${uname} You won the game`);
   containerFive.style.display = "none";
   form.style.display = "block";
 });
 
 wrongChoice.forEach((wrongChoices) => {
   wrongChoices.addEventListener("click", () => {
-    alert("You are wrong, go back to main page");
+    alert(`${uname} You are wrong, Game Over! go back play again`);
     form.style.display = "block";
     choices.map((choice) => {
       choice.style.display = "none";
