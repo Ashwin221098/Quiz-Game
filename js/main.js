@@ -67,7 +67,7 @@ choiceFiveR.addEventListener("click", () => {
 
 wrongChoice.forEach((wrongChoices) => {
   wrongChoices.addEventListener("click", () => {
-    alert(`${uname} You are wrong, Game Over! go back play again`);
+    alert(`${uname} You are wrong, Game Over! go back, play again`);
     form.style.display = "block";
     choices.map((choice) => {
       choice.style.display = "none";
